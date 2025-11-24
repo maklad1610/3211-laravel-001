@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\ItemController;
 use App\Http\Controllers\{
     ProductController,
-// UserController,
-// CommentController,
-// ServiceController,
-// ItemController,
+    UsersController,
+    CommentsController,
+    ServicesController,
+    ItemsController,
 };
 
 Route::view('/', 'welcome');
@@ -61,6 +61,10 @@ Route::get('posts/{post}', fn($post) => view('posts.view', ['post' => $post]));
 
 Route::resources([
     'products' => ProductController::class,
+    'users' => UsersController::class,
+    'comments' => CommentsController::class,
+    'services' => ServicesController::class,
+    'items' => ItemsController::class,
 ]);
 
 // Create the following controllers
