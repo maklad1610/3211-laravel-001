@@ -55,3 +55,57 @@ php artisan make:controller PostController -r
 # OR
 php artisan make:controller PostController --resource
 ```
+
+# Migration
+## Create migration
+```bash
+php artisan make:migration create_posts // To create a new table
+php artisan make:migration add_to_posts // To add columns to existing table
+php artisan make:migration remove_from_posts //  To remove columns from a table
+```
+
+## Run migrations
+```bash
+php artisan migrate
+```
+
+## Undo last migration
+```bash
+php artisan migrate:rollback
+```
+
+## Undo last 4 migrations
+```bash
+php artisan migrate:rollback --step=4
+```
+
+## Rollback all migrations and re-run them
+```bash
+php artisan migrate:refresh
+```
+
+## Delete all database tables, and run all migrations again
+```bash
+php artisan migrate:fresh
+``` 
+
+## Rollback all batches
+```bash
+php artisan migrate:reset
+``` 
+
+## ## Rollback specific batche
+```bash
+php artisan migrate:rollback --batch=3
+``` 
+
+## Only show the migration effect
+```bash
+php artisan migrate --pretend
+php artisan migrate:rollback --pretend
+``` 
+
+## Check the status of all migrations
+```bash
+php artisan migrate:status
+``` 
